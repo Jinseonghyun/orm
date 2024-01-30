@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>위니브 웹사이트</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .main-container {
+        border-radius: 5px;
+        border: 1px solid #dbdbdb;
+        background-color: #fff;
+        display: flex;
+        max-width: 350px;
+        flex-direction: column;
+        padding: 20px 16px;
+        margin: auto; /* 중앙 배치를 위한 추가 스타일 */
+      }
+
+      .welcome-message {
+        color: #000;
+        font: 400 12px Spoqa Han Sans Neo, -apple-system, Roboto, Helvetica,
+          sans-serif;
+      }
+
+      .main-image-container {
+        border-radius: 4px;
+        background-color: #711bff;
+        display: flex;
+        margin-top: 14px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 60px;
+      }
+
+      .main-image {
+        aspect-ratio: 5.56;
+        object-fit: contain;
+        object-position: center;
+        width: 102px;
+        max-width: 100%;
+      }
+
+      .info-section {
+        display: flex;
+        margin-top: 16px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 0 2px;
+      }
+
+      .info-group,
+      .signup-group {
+        display: flex;
+        justify-content: space-between;
+        gap: 4px;
+        font-size: 12px;
+        color: #767676;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+
+      .icon-image {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 16px;
+      }
+
+      .text-warpper {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+      }
+
+      .text {
+        font-family: Spoqa Han Sans Neo, -apple-system, Roboto, Helvetica,
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main-container">
+      <h1 class="welcome-message">
+        더 편리해진 위니브에 오신 것을 환영합니다.
+      </h1>
+      <a href="/" class="main-image-container">
+        <img
+          loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a0ef44a9642b98363c10cda27268677c9920001469d557bd08a05c72a1fe9b4?"
+          class="main-image"
+        />
+      </a>
+      <div class="info-section">
+        <div class="info-group">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/d3e2b5ac7dbffa37a1a29aa2fde61c770070894f7018d9a672946b8cb1ead5fe?"
+            class="icon-image"
+          />
+          <nav class="text-warpper">
+            <a href="/" class="text">아이디</a>
+            <a href="/" class="text">|</a>
+            <a href="/" class="text">비밀번호찾기</a>
+          </nav>
+        </div>
+        <div class="signup-group">
+          <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/a888605d5be85c53dcbe96f5eeac6c937969719f56381e86068b3d93073dda93?"
+            class="icon-image"
+          />
+          <a href="/" class="text">회원가입</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
