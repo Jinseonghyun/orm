@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위니브 로그인</title>
+    <style>
+        * {
+             /* 모든 html의 요소의 margin, padding 초기화  */
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        p {
+            font-size: 12px;   
+            line-height: 15px;  /* p tag의 높이 (줄 높이(간격)) */
+            /* height: 10;      단순 text글자 크기 자체를 변경함 */
+        }
+
+        a {
+            text-decoration: none;
+            color: #767676;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        /* 네이버 로그인창  ui 규격 따라하기 */
+        .a11y {
+            position: absolute; /* clip 옜날 속성이다 쓰지말자 대신 clip-path 사용하자 */
+            /* clip: rect(0 0 0 0);  overflow: hidden 으로 이미 안보이지만 어느 순간 혹시나 나타날까봐 완전히 숨김 요소를 하나하나 자른다.  */
+            clip-path: inset(50%); /* 오른쪽 왼쪽에서 50프로씩  */
+            width: 1px;
+            height: 1px;
+            /* margin: -1px;     옜날 익스플로어 지원할려고 사실 안써도됨  */
+            overflow: hidden;    /* 안에 텍스트를 숨긴다. */
+        }
+
+         /* class로 테두리 만들어준다. */
+        .cont-login {
+        /* 부모와 자식사이에 여백은 margin말고 padding을 주자 */
+        /* margin 으로만 하면 부모 자식 둘다 변형이 생긴다. */
+        /* padding: 18px 16px 17px  상하 좌우 다 조정*/
+            width: 350px;
+            padding: 18px 16px 17px;
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;
+            box-sizing: border-box;
+        /* 요소의 넓이나 높이값을 대도록 특정하지 말자 (유지보수를 위해 변형이 가능한 유연한 ui만들기 위해) */
+        /* 요소의 넓이는 (border + padding + contens) 생각해서 전체넓이에서 빼줘야한다.(생각보다 더 커지기 때문)*/
+        /*  계산을 해주기 싫다면 box_sizing: border-box 사용해주면 자동으로 한번에 다 해준다. */
+        }
+
+
+        .link-login {
+            /* 블록으로 지정해야 넓이를 지정 할 수 있다. 여기서는 안함 */
+            display: block;
+            padding: 14px 0 11px 0; /* 탑 , 바텀 weniv 옆 로그인 맞춰줌 */
+            margin: 16px 0;
+            border-radius: 4px;
+            text-align: center;  /* 엥커의 자식들을 가운데로 옮겨준다. */
+            background-color: #711BFF;
+            color: white;
+        }
+
+        .link-login img {
+            margin-right: 8px;
+        }
+
+        .link-id::after {
+        /* 가상요소 height 나 widgh 설정해주어도 안먹는다면 인라인 요소라 그렇다. */
+        /* display: inline-block 을 해줘서 바꿔주자 그냥 block 하면 자리 다 차지한다. */
+        /* 인라인 요소나 인라인 블록을 쓰면 블라우저는 텍스트로 인지 기본적으로 베이스라인에 위치한다. */
+        /* 상하정열 vertical-align: 1px 베이스라인에서 1올리겠다. -2px 베이스에서 2픽셀 내리겠다.*/
+        /* 좌우정열 여백주기 margin-left 5px  왼쪽에 5픽셀 여백만들어줌 */
+        /* 그냥 좌우는 margin 16px 좌우로 16픽셀 여백 */
+            content: '';
+            display: inline-block;
+            height: 12px;
+            width: 1px;
+            margin-left: 5px;
+            background-color: #767676;
+            vertical-align: -2px;
+        }
+
+        .img-find {
+            vertical-align: -3px;
+        }
+
+        .img-join {
+        /* 회원가입 오른쪽으로 옮길 때 margin으로 그냥 옮기면 전체 사이즈 변하면 원하는 위치에 없다 */
+        /* 해결 위해 float 사용하자 , float: right;  사용하면 오른쪽 끝으로 붙는다.*/
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="cont-login">
+        <!-- 안보여도 제목을 정해주기 -->
+        <h1 class="a11y">위니브에 로그인하기</h1>
+        <p class="txt-login">더 편리해진 위니브에 오신 것을 환영합니다.</p>
+        <!-- a 에 하이퍼링크를 없애지 말고 없으면 #none 처리하자 -->
+        <a href="#none" class="link-login">
+            <img src="images_login\weniv-logo.png" alt="weniv">
+            로그인
+        </a>
+        <img src="images_login/icon-lock.png" alt="" class="img-find">
+        <a href="#none" class="link-id">아이디</a>
+        <a href="#none">비밀번호찾기</a>
+        <img src="images_login/icon-user.png" alt="" class="img-find img-join">
+        <a href="#none">회원가입</a>
+    </article>
+</body>
+
+</html>

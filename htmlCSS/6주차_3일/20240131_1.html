@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        section {
+            /* html 에 스크롤 일부러 만들려고 1000 */
+            height: 1000px;
+            border: 3px solid black;
+        }
+
+        h2 {
+            /* h2 에 스타일이 걸려있는데 sticky */
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0px; 
+            background: greenyellow;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>sticky test</h1>
+    <section>
+         <!-- section 요소의 자식으로 h2 의 컨텐츠로 오늘의 메뉴 $를 써서 하나씩 증가 형제로 ul이 있고 그 밑에 li가 있고 그 밑에 lorem이 있는데 이게 3개가 있다 그런데 그걸 3번 반복하겠다. -->
+        <h2>오늘의 메뉴1</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fuga optio voluptatem expedita iure rem enim consequuntur, unde quidem dolor, temporibus laudantium delectus animi neque ullam, magnam impedit in porro.</li>
+            <li>Pariatur reprehenderit enim, non similique quod odio. Deleniti nam tenetur magni iste nulla praesentium quidem minima ratione nobis quibusdam cupiditate exercitationem, repellat adipisci fugiat? Minus eaque maiores eius repudiandae dolore.</li>
+            <li>Iusto necessitatibus esse animi veniam iste, nemo sunt, neque illum id dolore eveniet, minima deserunt quisquam quia? Amet, officiis veniam eaque, blanditiis, atque dolorum doloribus in molestias omnis facilis vel.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>오늘의 메뉴2</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolorem blanditiis molestiae minima fugit nam delectus nemo sunt beatae quaerat itaque distinctio natus cupiditate adipisci magni omnis impedit, quas dignissimos.</li>
+            <li>Recusandae aut adipisci molestiae? Eaque necessitatibus vitae cupiditate dolore modi rem nam mollitia laboriosam! Itaque illum dolore similique libero laudantium. Corporis mollitia perferendis quod! Cum eaque maiores incidunt delectus neque!</li>
+            <li>Ut labore iusto eius, eos perspiciatis magni! Quo enim ab ex sed magni, suscipit numquam, voluptate vitae aut mollitia corporis nam unde commodi pariatur totam sequi! Facilis dolor numquam ipsam.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>오늘의 메뉴3</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, mollitia? Ratione aliquam repellendus, aspernatur exercitationem natus quisquam sapiente eaque itaque excepturi accusamus sint temporibus unde quo illo? Autem, temporibus consectetur?</li>
+            <li>Ipsam adipisci aperiam eaque minima, officiis odio rem. Natus mollitia fuga, sunt impedit eius nulla accusantium tenetur amet expedita doloremque quas consequuntur animi beatae fugit autem vero, maiores architecto molestias!</li>
+            <li>Doloremque nesciunt enim molestias error, nihil voluptatem temporibus, tenetur magnam eveniet, vero cum ipsam expedita odio. Ut est, ipsa reprehenderit pariatur, dolorem fugiat laborum cumque temporibus quaerat voluptate quidem magni.</li>
+        </ul>
+    </section>
+   
+</body>
+
+</html>

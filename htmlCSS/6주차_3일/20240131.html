@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>relative</title>
+  <style>
+    /* 상하좌우중 먼저 반대것이 사용되고 있다면 변화가 없을 수 있다.*/
+    /* 이유는 top이 사용중인데 bottom 을 사용해도 찌부가 되기에 역방향이 들어가면 위치의 변화없다.*/
+    /* position 너무 간편하지만 요소간 상호작용이 안된다. 그래서 독자적일때 아니면 사용하지말자 */
+    /* top: 위쪽에서 얼마나 이동할건기 즉 내려오는거 */
+    /*right: ;  오른쪽에서 얼마나 이동할건기*/
+    /*bottom: ;  아래에서 얼마나 이동할건기*/
+    /*left: ;   왼쪽에서 얼마나 이동할건기*/
+    .box1{
+    position:relative;
+    top:40px;
+    background-color: green;
+    color:white;
+    width: 100px;
+    height: 100px;
+  }
+  .box2{
+    position:absolute;
+    top: 40px;
+    background-color: red;
+    color:white;
+    width: 100px;
+    height: 100px;
+  }
+  .box3{
+    position: absolute;
+		top: 30px;
+    left: 30px;
+    background-color: blue;
+    color:white;
+    width: 100px;
+    height: 100px;
+  }
+  </style>
+</head>
+<body>
+  <div class="box3">box3</div>
+  <div class="box1">box1
+    <div class="box2">
+      box2
+    </div>
+
+  </div>
+</body>
+</html>
