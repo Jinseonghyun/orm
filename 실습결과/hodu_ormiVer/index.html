@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODU</title>
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header class="cont-header" id="headerMain">
+        <div class="box-header">
+            <h1><a href="#none"><img src="images/Logo_hodu.svg" alt="HODU"></a></h1>
+            <nav>
+                <ul class="list-menu">
+                    <li><a href="#none">Home</a></li>
+                    <li><a href="#none">About</a></li>
+                    <li><a href="#none">Support</a></li>
+                    <li><a href="#none" class="btn-common">Download</a></li>
+                </ul>
+            </nav>
+            <h2>
+                Lorem Ipsum is simply<br>
+                dummy text of the printing and
+            </h2>
+            <p class="txt-header">
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry.<br>
+                Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown
+            </p>
+            <a href="#none" class="btn-common">Download</a>
+        </div>
+    </header>
+    <main class="cont-main">
+        <section class="main-intro">
+            <figure>
+                <img src="images/img_hodu1.jpeg" alt="체크무늬 이불위에 옆으로 엎드린 채 고개를 들어 어딘가를 바라보는 호두의 사진">
+                <figcaption>
+                    <h2>Lorem Ipsum is simply dummy text of the printing and dummy text</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </figcaption>
+            </figure>
+        </section>
+        <section class="main-photos">
+            <h2>dummy text of the printing and dummy</h2>
+            <p class="txt-photos">
+                Lorem Ipsum is simply <strong>dummy text</strong> of the printing and typesetting industry. <br>
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+            </p>
+
+            <ul class="list-photos">
+                <li><button type="button"><img src="images/img_hodu2.jpeg" alt="캣타워 위에 앉아있는 호두"></button></li>
+                <li><button type="button"><img src="images/img_hodu3.jpeg" alt="콘센트 구멍 근처에 등을 돌리고 앉아있는 호두"></button>
+                </li>
+                <li><button type="button"><img src="images/img_hodu4.jpeg" alt="이불밖에서 나를 바라보는  호두"></button></li>
+                <li><button type="button"><img src="images/img_hodu5.jpeg" alt="커다른 호두의 얼굴"></button></li>
+                <li><button type="button"><img src="images/img_hodu6.jpeg" alt="위를 빤히 바라보는 호두"></button></li>
+                <li><button type="button"><img src="images/img_hodu7.jpeg" alt="대리석 바닥에 누워서 하품하는 호두"></button></li>
+            </ul>
+
+            <div class="box-extends">
+                <p class="txt-info">
+                    Continue exploring HODU
+                </p>
+                <button class="btn-common more">Show More</button>
+                <button class="btn-common end">Show End</button>
+            </div>
+        </section>
+        <section class="main-map">
+            <h2>Where you'll be</h2>
+            <address>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</address>
+            <div id="map"></div>
+        </section>
+        <article class="widget-subscribe">
+            <div class="box-txt">
+                <h3>Subscribe to our Blog post</h3>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has
+                    been
+                    the industry's standard dummy text
+                </p>
+            </div>
+            <form class="form-subscribe">
+                <label for="inpEmail" class="a11y">구독 이메일 입력창</label>
+                <input id="inpEmail" type="email" required placeholder="Enter your e-mail address">
+                <button type="submit" class="btn-common">subscribe</button>
+            </form>
+        </article>
+    </main>
+    <footer class="cont-footer">
+        <div class="box-footer-bg"></div>
+        <div class="box-footer">
+            <h2><a href="#none"><img src="images/Logo_hodu.svg" alt="HODU"></a></h2>
+            <ul class="list-link-sns">
+                <li><a href="#none" class="link-blog"><span class="a11y">블로그</span></a></li>
+                <li><a href="#none" class="link-insta"><span class="a11y">인스타그램</span></a></li>
+                <li><a href="#none" class="link-facebook"><span class="a11y">페이스북</span></a></li>
+                <li><a href="#none" class="link-youtube"><span class="a11y">유튜브</span></a></li>
+            </ul>
+        </div>
+    </footer>
+    <a href="#headerMain" class="link-top"><span class="a11y">최상단으로 이동하기</span></a>
+
+    <dialog>
+        <form method="dialog">
+            <figure>
+                <img src="images/img_hodu_head.png" alt="볼빨간 호두">
+                <figcaption>
+                    <strong>Thank you!</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, eos.</p>
+                </figcaption>
+            </figure>
+            <button class="btn-common">OK! I Love HODU</button>
+        </form>
+    </dialog>
+
+
+    <script>
+        // 무한 스크롤 이벤트
+        const mainPhtos = document.querySelector('.main-photos');
+        const listPhotos = mainPhtos.querySelector('.list-photos');
+        const boxExtends = mainPhtos.querySelector('.box-extends');
+        const btnShow = boxExtends.querySelector('.more');
+        const btnEnd = boxExtends.querySelector('.end');
+        let pageToFetch = 1;
+
+
+        async function fetchImages(pageNum) {
+            console.log('call!');
+            try {
+                const response = await fetch('https://picsum.photos/v2/list?page=' + pageNum + '&limit=6');
+                if (!response.ok) {
+                    throw new Error('네트워크 응답에 문제가 있습니다.');
+                }
+
+                const datas = await response.json();
+                console.log(datas);
+
+                makeImageList(datas);
+
+            } catch (error) {
+                console.error('데이터를 가져오는데 문제가 발생했습니다 :', error);
+            }
+        }
+
+        // 이미지 리스트 제작 함수
+        function makeImageList(datas) {
+            datas.forEach((data) => {
+                listPhotos.insertAdjacentHTML('beforeend', `<li><button type="button"><img src=${data.download_url} alt="" /></button></li>`);
+            });
+        }
+
+        // 스크롤 이벤트 쓰로틀링 함수
+        function throttling(callback, delay) {
+
+            let timer = null;
+            return () => {
+                console.log(timer);
+                if (timer === null) {
+                    // scrollTop: 스크롤된 영역의 상단 위치
+                    // clientHeight: 요소의 높이 (스크롤 바 제외)
+                    // scrollHeight: 스크롤된 전체 내용의 높이
+                    if (listPhotos.clientHeight + listPhotos.scrollTop + 5 >= listPhotos.scrollHeight) {
+                        timer = setTimeout(() => {
+                            callback(pageToFetch++);
+                            timer = null;
+                        }, delay);
+                    }
+                }
+            }
+        };
+
+        // 쓰로틀 이벤트를 추적하는 상수
+        const ThrottleTracker = throttling(fetchImages, 500);
+
+        // 무한 스크롤 작동 이벤트
+        btnShow.addEventListener('click', () => {
+            boxExtends.classList.toggle('stop');
+            listPhotos.style.height = "1400px";
+            listPhotos.style.overflowY = "scroll";
+            document.body.style.overflow = "hidden";
+            // 현재 스크롤 위치를 리스트의 바닥으로 이동.
+            // offsetTop :  페이지 상단부터 요소의 상단까지의 거리
+            window.scrollTo({
+                top: listPhotos.offsetTop + 1450,
+                behavior: "smooth",
+            });
+
+            listPhotos.addEventListener('scroll', ThrottleTracker);
+            fetchImages(pageToFetch++);
+        });
+
+        // 무한 스크롤 정지 이벤트
+        btnEnd.addEventListener('click', () => {
+            document.body.style.overflow = "auto";
+            boxExtends.classList.toggle('stop');
+            listPhotos.removeEventListener('scroll', ThrottleTracker);
+        });
+
+
+        // 모달 이벤트
+        const modal = document.querySelector('dialog');
+        const btnSubscribe = document.querySelector('.form-subscribe .btn-common');
+        btnSubscribe.addEventListener('click', () => {
+            modal.showModal();
+        })
+    </script>
+</body>
+
+</html>
