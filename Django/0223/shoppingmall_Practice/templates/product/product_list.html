@@ -1,0 +1,24 @@
+{% extends 'base.html '%}
+
+{% block contents %}
+<h1>product_list</h1>
+<ul>
+    {% for product in product_list %}
+    <li>
+        {{ forloop.counter }}
+        <a href="{% url 'product_detail' product.id %}">{{ product.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block testing %}
+<h2>testing</h2>
+{% endblock %}
+
+
+{% block test_ing %}
+<script>
+    console.log('test_ing');
+</script>
+{% endblock %}

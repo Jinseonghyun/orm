@@ -1,0 +1,12 @@
+{% extends 'base.html '%}
+
+{% block contents %}
+<h1>product_detail</h1>
+<h2>{{ product.title }}</h2>
+<p>{{ product.content }}</p>
+<p>{{ product.created_at }}</p>
+<p>{{ product.updated_at }}</p>
+<p>{{ product.brand }}</p>
+<p>{{ product.category }}</p>
+<a href="{% url 'product_list' %}">목록</a>
+{% endblock %}
