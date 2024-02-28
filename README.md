@@ -2,7 +2,8 @@
 
 ## 2023.12.28(목) ~ 2024.04.18(목)  
 
-현재 진도 : PYTHON, HTML, CSS, JAVA_SCRIPT, Django, Bootstrap, Tailwind
+공부 내용 : Python, HTML, CSS, Java_Script, Django, Bootstrap, Tailwind
+협업 툴   : GitHub
 
 * 인공지능(AI) 모델 활용 백엔드 개발 과정
   - 모두의 연구소 오름캠프에서 진행하는 부트캠프 
